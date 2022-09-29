@@ -5,13 +5,26 @@
 var userInputLength = 0;
 
 function generatePassword(userInputLength) {
-    var userInputLength = prompt("How many characters would you like your password to be? (Enter a number between 8 - 128): ")
+    var userInputLength = prompt("How many characters would you like your new password to be? (Enter a number between 8 - 128): ")
     // character length must be 8 - 182
     if (userInputLength < 8 || userInputLength > 128) {
         return alert("Please try again and enter a number between 8 and 128")
     };
     alert("Please follow the prompts to create your new password");
-    if (userInputLength >= 8 && userInputLength > 128);
+    if (userInputLength >= 8 && userInputLength <= 128);
+    var userUpperCaseInput = prompt("Include uppercase letters? (Enter yes or no): ");
+    if (userUpperCaseInput === "yes") {
+        var upperCaseValues = "";
+        var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var upperCaseLength = uppercase.length;
+        for (var i = 0; i < userInputLength; i++) {
+            // charAt() returns the character at the specified index in a string
+            // random values from uppercase string multiplied by user's length input
+            upperCaseValues += uppercase.charAt(Math.floor(Math.random() * upperCaseLength));
+        }
+    } else if (userUpperCaseInput === "no") {
+        upperCaseValues = "";
+    };
 }
 
 
