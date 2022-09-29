@@ -15,15 +15,27 @@ function generatePassword(userInputLength) {
     var userUpperCaseInput = prompt("Include uppercase letters? (Enter yes or no): ");
     if (userUpperCaseInput === "yes") {
         var upperCaseValues = "";
-        var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var upperCaseLength = uppercase.length;
+        var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var upperCaseLength = uppercaseLetters.length;
         for (var i = 0; i < userInputLength; i++) {
             // charAt() returns the character at the specified index in a string
             // random values from uppercase string multiplied by user's length input
-            upperCaseValues += uppercase.charAt(Math.floor(Math.random() * upperCaseLength));
+            upperCaseValues += uppercaseLetters.charAt(Math.floor(Math.random() * upperCaseLength));
         }
     } else if (userUpperCaseInput === "no") {
         upperCaseValues = "";
+    };
+
+    var userLowerCaseInput = prompt("Include lowercase letters? (Enter yes or no): ")
+    if (userLowerCaseInput === "yes") {
+        var lowerCaseValues = "";
+        var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        var lowerCaseLength = lowercaseLetters.length;
+        for (var i = 0; i < userInputLength; i++) {
+            lowerCaseValues += lowercaseLetters.charAt(Math.floor(Math.random * lowerCaseLength));
+        }
+    } else if (userLowerCaseInput === "no") {
+        lowerCaseValues = "";
     };
 }
 
