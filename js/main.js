@@ -6,13 +6,17 @@ var userInputLength = 0;
 
 function generatePassword(userInputLength) {
     var userInputLength = prompt("How many characters would you like your new password to be? (Enter a number between 8 - 128): ")
-    // character length must be 8 - 182
+    // character length must be 8 - 128
     if (userInputLength < 8 || userInputLength > 128) {
         return alert("Please try again and enter a number between 8 and 128")
     };
+
     alert("Please follow the prompts to create your new password");
+
     if (userInputLength >= 8 && userInputLength <= 128);
     var userUpperCaseInput = prompt("Include uppercase letters? (Enter yes or no): ");
+    // user can input upper or lowercase answer
+    userUpperCaseInput = userUpperCaseInput.toLowerCase();
     if (userUpperCaseInput === "yes") {
         var upperCaseValues = "";
         var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -23,14 +27,17 @@ function generatePassword(userInputLength) {
             upperCaseValues += uppercaseLetters.charAt(Math.floor(Math.random() * upperCaseLength));
         }
     } else if (userUpperCaseInput === "no") {
+        userUpperCaseInput = userUpperCaseInput.toLowerCase();
         upperCaseValues = "";
+        // if user decides to hit cancel or misspells yes or no
     } else {
         alert("Please try again and enter yes or no")
         return
     };
 
-    // apply same alogorithm for all user prompts
+    // apply same alogorithm for all password criteria prompts
     var userLowerCaseInput = prompt("Include lowercase letters? (Enter yes or no): ")
+    userLowerCaseInput = userLowerCaseInput.toLowerCase();
     if (userLowerCaseInput === "yes") {
         var lowerCaseValues = "";
         var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -39,6 +46,7 @@ function generatePassword(userInputLength) {
             lowerCaseValues += lowercaseLetters.charAt(Math.floor(Math.random() * lowerCaseLength));
         }
     } else if (userLowerCaseInput === "no") {
+        userLowerCaseInput = userLowerCaseInput.toLowerCase();
         lowerCaseValues = "";
     } else {
         alert("Please try again and enter yes or no")
@@ -46,6 +54,7 @@ function generatePassword(userInputLength) {
     };
 
     var userNumberInput = prompt("Include numbers? (Enter yes or no): ")
+    userNumberInput = userNumberInput.toLowerCase();
     if (userNumberInput === "yes") {
         var numberValues = "";
         var numbers = "0123456789";
@@ -54,6 +63,7 @@ function generatePassword(userInputLength) {
             numberValues += numbers.charAt(Math.floor(Math.random() * numberLength));
         }
     } else if (userNumberInput === "no") {
+        userNumberInput = userNumberInput.toLowerCase();
         numberValues = "";
     } else {
         alert("Please try again and enter yes or no")
@@ -61,6 +71,7 @@ function generatePassword(userInputLength) {
     };
 
     var userSymbolInput = prompt("Include special characters? (Enter yes or no): ")
+    userSymbolInput = userSymbolInput.toLowerCase();
     if (userSymbolInput === "yes") {
         var symbolValues = "";
         // The OWASP® Foundation use of special characters in passwords
@@ -70,6 +81,7 @@ function generatePassword(userInputLength) {
             symbolValues += symbols.charAt(Math.floor(Math.random() * symbolLength));
         }
     } else if (userSymbolInput === "no") {
+        userSymbolInput = userSymbolInput.toLowerCase();
         symbolValues = "";
     } else {
         alert("Please try again and enter yes or no")
@@ -87,3 +99,4 @@ function generatePassword(userInputLength) {
     document.getElementById("password").innerHTML = finalPassword;
 
 };
+
