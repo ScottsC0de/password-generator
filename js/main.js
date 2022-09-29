@@ -37,6 +37,18 @@ function generatePassword(userInputLength) {
     } else if (userLowerCaseInput === "no") {
         lowerCaseValues = "";
     };
+
+    var userNumberInput = prompt("Include numbers? (Enter yes or no): ")
+    if (userNumberInput === "yes") {
+        var numberValues = "";
+        var numbers = "0123456789";
+        var numberLength = numbers.length;
+        for (var i = 0; i < userInputLength; i++) {
+            numberValues += numbers.charAt(Math.floor(Math.random * numberLength));
+        }
+    } else if (userNumberInput === "no") {
+        numberValues = "";
+    };
 }
 
 
