@@ -24,6 +24,9 @@ function generatePassword(userInputLength) {
         }
     } else if (userUpperCaseInput === "no") {
         upperCaseValues = "";
+    } else {
+        alert("Please try again and enter yes or no")
+        return
     };
 
     // apply same alogorithm for all user prompts
@@ -37,6 +40,9 @@ function generatePassword(userInputLength) {
         }
     } else if (userLowerCaseInput === "no") {
         lowerCaseValues = "";
+    } else {
+        alert("Please try again and enter yes or no")
+        return
     };
 
     var userNumberInput = prompt("Include numbers? (Enter yes or no): ")
@@ -49,11 +55,15 @@ function generatePassword(userInputLength) {
         }
     } else if (userNumberInput === "no") {
         numberValues = "";
+    } else {
+        alert("Please try again and enter yes or no")
+        return
     };
 
     var userSymbolInput = prompt("Include special characters? (Enter yes or no): ")
     if (userSymbolInput === "yes") {
         var symbolValues = "";
+        // The OWASP® Foundation use of special characters in passwords
         var symbols = "!@#$%^&*()+,-./:;<=>?[{}]~`|_";
         var symbolLength = symbols.length;
         for (var i = 0; i < userInputLength; i++) {
@@ -61,6 +71,9 @@ function generatePassword(userInputLength) {
         }
     } else if (userSymbolInput === "no") {
         symbolValues = "";
+    } else {
+        alert("Please try again and enter yes or no")
+        return
     };
 
     // apply same algorithm to final password, combining all user inputs
