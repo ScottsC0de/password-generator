@@ -49,7 +49,19 @@ function generatePassword(userInputLength) {
     } else if (userNumberInput === "no") {
         numberValues = "";
     };
-}
+
+    var userSymbolInput = prompt("Include special characters? (Enter yes or no): ")
+    if (userSymbolInput === "yes") {
+        var symbolValues = "";
+        var symbols = "!@#$%^&*()+,-./:;<=>?[{}]~`|_";
+        var symbolLength = symbols.length;
+        for (var i = 0; i < userInputLength; i++) {
+            symbolValues += symbols.charAt(Math.floor(Math.random * symbolLength));
+        }
+    } else if (userSymbolInput === "no") {
+        symbolValues = "";
+    };
+};
 
 
 
