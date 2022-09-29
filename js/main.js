@@ -26,13 +26,14 @@ function generatePassword(userInputLength) {
         upperCaseValues = "";
     };
 
+    // apply same alogorithm for all user prompts
     var userLowerCaseInput = prompt("Include lowercase letters? (Enter yes or no): ")
     if (userLowerCaseInput === "yes") {
         var lowerCaseValues = "";
         var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
         var lowerCaseLength = lowercaseLetters.length;
         for (var i = 0; i < userInputLength; i++) {
-            lowerCaseValues += lowercaseLetters.charAt(Math.floor(Math.random * lowerCaseLength));
+            lowerCaseValues += lowercaseLetters.charAt(Math.floor(Math.random() * lowerCaseLength));
         }
     } else if (userLowerCaseInput === "no") {
         lowerCaseValues = "";
@@ -44,7 +45,7 @@ function generatePassword(userInputLength) {
         var numbers = "0123456789";
         var numberLength = numbers.length;
         for (var i = 0; i < userInputLength; i++) {
-            numberValues += numbers.charAt(Math.floor(Math.random * numberLength));
+            numberValues += numbers.charAt(Math.floor(Math.random() * numberLength));
         }
     } else if (userNumberInput === "no") {
         numberValues = "";
@@ -56,10 +57,18 @@ function generatePassword(userInputLength) {
         var symbols = "!@#$%^&*()+,-./:;<=>?[{}]~`|_";
         var symbolLength = symbols.length;
         for (var i = 0; i < userInputLength; i++) {
-            symbolValues += symbols.charAt(Math.floor(Math.random * symbolLength));
+            symbolValues += symbols.charAt(Math.floor(Math.random() * symbolLength));
         }
     } else if (userSymbolInput === "no") {
         symbolValues = "";
+    };
+
+    // apply same algorithm to final password, combining all user inputs
+    var finalPassword = "";
+    var finalPasswordValues = upperCaseValues + lowerCaseValues + numberValues + symbolValues;
+    var finalPasswordLength = finalPasswordValues.length;
+    for (var = 0; i < userInputLength; i++) {
+        finalPassword += finalPasswordValues.charAt(Math.floor(Math.random() * finalPasswordLength));
     };
 };
 
