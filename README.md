@@ -15,9 +15,9 @@ See "Video" below for a demonstration.
 
 ## Links
 
-    *
+    * https://scottsc0de.github.io/password-generator/
 
-    *
+    * https://github.com/ScottsC0de/password-generator
 
 ## Video
 
