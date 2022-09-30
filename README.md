@@ -25,4 +25,7 @@ See "Video" below for a demonstration.
 
 ## Screenshots
 
-![alt text]: 
+![alt text](assets/password-gen-page-pic.png)
+
+
+
