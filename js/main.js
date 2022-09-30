@@ -56,7 +56,7 @@ function generatePassword(userInputLength) {
         return
     };
 
-    var userNumberInput = prompt("Include numbers? (Please yes or no): ")
+    var userNumberInput = prompt("Include numbers? (Please enter yes or no): ")
     userNumberInput = userNumberInput.toLowerCase();
     if (userNumberInput === "yes") {
         var numberValues = "";
@@ -73,7 +73,7 @@ function generatePassword(userInputLength) {
         return
     };
 
-    var userSymbolInput = prompt("Include special characters? (Please yes or no): ")
+    var userSymbolInput = prompt("Include special characters? (Please enter yes or no): ")
     userSymbolInput = userSymbolInput.toLowerCase();
     if (userSymbolInput === "yes") {
         var symbolValues = "";
