@@ -11,10 +11,10 @@ function generatePassword(userInputLength) {
         return alert("Please try again and enter a number between 8 and 128")
     };
 
-    alert("Please follow the prompts to create your new password");
+    alert("Please follow the prompts to create your new password!");
 
     if (userInputLength >= 8 && userInputLength <= 128);
-    var userUpperCaseInput = prompt("Include uppercase letters? (Enter yes or no): ");
+    var userUpperCaseInput = prompt("Include uppercase letters? (Please enter yes or no): ");
     // user can input upper or lowercase answer
     userUpperCaseInput = userUpperCaseInput.toLowerCase();
     if (userUpperCaseInput === "yes") {
@@ -22,7 +22,7 @@ function generatePassword(userInputLength) {
         var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var upperCaseLength = uppercaseLetters.length;
         for (var i = 0; i < userInputLength; i++) {
-            // charAt() returns the character at the specified index in a string
+            // charAt() returns a character at specified index in a string
             // random values from uppercase string multiplied by user's length input
             upperCaseValues += uppercaseLetters.charAt(Math.floor(Math.random() * upperCaseLength));
         }
@@ -36,7 +36,7 @@ function generatePassword(userInputLength) {
     };
 
     // apply same alogorithm for all password criteria prompts
-    var userLowerCaseInput = prompt("Include lowercase letters? (Enter yes or no): ")
+    var userLowerCaseInput = prompt("Include lowercase letters? (Please enter yes or no): ")
     userLowerCaseInput = userLowerCaseInput.toLowerCase();
     if (userLowerCaseInput === "yes") {
         var lowerCaseValues = "";
@@ -53,7 +53,7 @@ function generatePassword(userInputLength) {
         return
     };
 
-    var userNumberInput = prompt("Include numbers? (Enter yes or no): ")
+    var userNumberInput = prompt("Include numbers? (Please yes or no): ")
     userNumberInput = userNumberInput.toLowerCase();
     if (userNumberInput === "yes") {
         var numberValues = "";
@@ -70,7 +70,7 @@ function generatePassword(userInputLength) {
         return
     };
 
-    var userSymbolInput = prompt("Include special characters? (Enter yes or no): ")
+    var userSymbolInput = prompt("Include special characters? (Please yes or no): ")
     userSymbolInput = userSymbolInput.toLowerCase();
     if (userSymbolInput === "yes") {
         var symbolValues = "";
