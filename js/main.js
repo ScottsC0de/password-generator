@@ -13,10 +13,12 @@ function generatePassword(userInputLength) {
 
     alert("Please follow the prompts to create your new password!");
 
+    // checks if number is between 8 - 128 and begins function
     if (userInputLength >= 8 && userInputLength <= 128);
     var userUpperCaseInput = prompt("Include uppercase letters? (Please enter yes or no): ");
     // user can input upper or lowercase answer
     userUpperCaseInput = userUpperCaseInput.toLowerCase();
+    // if user inputs yes, grab random values
     if (userUpperCaseInput === "yes") {
         var upperCaseValues = "";
         var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -26,10 +28,11 @@ function generatePassword(userInputLength) {
             // random values from uppercase string multiplied by user's length input
             upperCaseValues += uppercaseLetters.charAt(Math.floor(Math.random() * upperCaseLength));
         }
+        // if user inputs no, grab no values
     } else if (userUpperCaseInput === "no") {
         userUpperCaseInput = userUpperCaseInput.toLowerCase();
         upperCaseValues = "";
-        // if user decides to hit cancel or misspells yes or no
+        // if user misspells yes or no
     } else {
         alert("Please try again and enter yes or no")
         return
@@ -88,14 +91,16 @@ function generatePassword(userInputLength) {
         return
     };
 
-    // apply same algorithm to final password, combining all user inputs
+    // apply same algorithm to final password
     var finalPassword = "";
     var finalPasswordValues = upperCaseValues + lowerCaseValues + numberValues + symbolValues;
     var finalPasswordLength = finalPasswordValues.length;
     for (var i = 0; i < userInputLength; i++) {
+        // combine all user criteria to create final password
         finalPassword += finalPasswordValues.charAt(Math.floor(Math.random() * finalPasswordLength));
     }
 
+    // API used to display final password from function as text on page
     document.getElementById("password").innerHTML = finalPassword;
 
 };
