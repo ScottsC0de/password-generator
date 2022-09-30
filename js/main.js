@@ -9,6 +9,8 @@ function generatePassword(userInputLength) {
     // character length must be 8 - 128
     if (userInputLength < 8 || userInputLength > 128) {
         return alert("Please try again and enter a number between 8 and 128")
+    } else if (isNaN(userInputLength)) {
+        return alert("Please try again and enter a number between 8 and 128")
     };
 
     alert("Please follow the prompts to create your new password!");
